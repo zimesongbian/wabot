@@ -1,0 +1,4 @@
+/.venv/lib/python3.8/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so filter=lfs diff=lfs merge=lfs -text
+/.git/objects/pack/pack-26e0dffe9fc05c65479997da49f35979ae4f8e0d.pack filter=lfs diff=lfs merge=lfs -text
+.venv/lib/python3.8/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so filter=lfs diff=lfs merge=lfs -text
+.git/objects/pack/pack-26e0dffe9fc05c65479997da49f35979ae4f8e0d.pack filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,93 @@
+version: "3.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - saluer
+  - au_revoir
+  - fin_discussion
+  - choisir_plat
+  - choisir_boisson
+  - afficher_menu
+  - afficher_menu_vegetarien
+  - voir_details_plat
+  - voir_details_boisson
+
+slots:
+  item_name:
+    type: text
+    mappings:
+      - type: from_text
+
+  item_category:
+    type: text
+    mappings:
+      - type: from_text
+
+  size:
+    type: text
+    mappings:
+      - type: from_text
+
+  price:
+    type: text
+    mappings:
+      - type: from_text
+
+  vegetarian:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        value: true
+        intent: afficher_menu_vegetarien
+      - type: from_intent
+        value: false
+        intent: afficher_menu
+
+responses:
+  utter_greet:
+    - text: "Bonjour, bienvenue au restaurant BINGO. Comment puis-je vous aider aujourd'hui ?"
+
+  utter_goodbye:
+    - text: "Merci de votre visite chez BINGO. Au revoir et à bientôt !"
+
+  utter_end_conversation:
+    - text: "Merci pour votre visite ! Si vous avez d'autres questions, n'hésitez pas à demander."
+
+  utter_present_restaurant:
+    - text: "Notre restaurant BINGO propose une variété de plats délicieux et de boissons rafraîchissantes. Voulez-vous voir le menu ?"
+
+  utter_present_dishes:
+    - text: "Nous proposons une grande sélection de plats, y compris des pizzas de différentes tailles. Choisissez ce qui vous plaît."
+
+  utter_present_drinks:
+    - text: "Comme boissons, nous avons un large choix, allant des jus sucrés aux boissons alcoolisées. Choisissez la boisson qui vous convient."
+
+  utter_present_menu:
+    - text: "Voici le menu du restaurant BINGO, comprenant les pizzas et les boissons. Choisissez une option."
+
+  utter_present_vegetarian_menu:
+    - text: "Voici le menu végétarien de BINGO. Choisissez une option."
+
+  utter_choose_item:
+    - text: "Vous avez choisi {item_name} ({size}) pour {price}. Souhaitez-vous ajouter cette option à votre commande ?"
+
+  utter_invalid_restaurant:
+    - text: "Désolé, je n'ai pas trouvé ce restaurant. Veuillez réessayer."
+
+actions:
+  - action_present_menu
+  - action_choose_item
+  - utter_greet
+  - utter_goodbye
+  - utter_end_conversation
+  - utter_present_restaurant
+  - utter_present_dishes
+  - utter_present_drinks
+  - utter_present_menu
+  - utter_present_vegetarian_menu
+  - utter_choose_item
+  - utter_invalid_restaurant
