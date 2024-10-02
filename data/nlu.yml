@@ -1,0 +1,70 @@
+version: "3.0"
+
+nlu:
+  - intent: choisir_plat
+    examples: |
+      - Je choisis le plat {item_name} en {size}
+      - Ajoute le plat {item_name} {size} à ma commande
+      - Je veux ce plat {item_name} pour {price}€
+      - Choisir ce plat {item_name} {size}
+
+  - intent: choisir_boisson
+    examples: |
+      - Je choisis la boisson {item_name} en {size}
+      - Ajoute la boisson {item_name} {size} à ma commande
+      - Je veux cette boisson {item_name} pour {price}€
+      - Choisir cette boisson {item_name} {size}
+
+  - intent: choisir_dessert
+    examples: |
+      - Je choisis le dessert {item_name} en {size}
+      - Ajoute le dessert {item_name} {size} à ma commande
+      - Je veux ce dessert {item_name} pour {price}€
+      - Choisir ce dessert {item_name} {size}
+
+  - intent: saluer
+    examples: |
+      - Bonjour
+      - Salut
+      - Hello
+      - Bonsoir
+      - Coucou
+
+  - intent: presentation_restaurant
+    examples: |
+      - Pouvez-vous me parler de ce restaurant ?
+      - Présentez-moi ce restaurant
+      - Quels types de plats ce restaurant propose-t-il ?
+      - Dites-moi plus sur ce restaurant
+      - Décrivez le restaurant
+
+  - intent: presentation_plats
+    examples: |
+      - Quels plats sont disponibles ?
+      - Montrez-moi le menu des plats
+      - Que proposez-vous comme plats ?
+      - Quels sont les plats du jour ?
+      - Avez-vous des plats spéciaux ?
+
+  - intent: presentation_boissons
+    examples: |
+      - Quelles boissons sont disponibles ?
+      - Montrez-moi le menu des boissons
+      - Que proposez-vous comme boissons ?
+      - Avez-vous des boissons spéciales ?
+
+  - intent: au_revoir
+    examples: |
+      - Au revoir
+      - À bientôt
+      - Bonne journée
+      - Salut
+      - Bye bye
+
+  - intent: fin_discussion
+    examples: |
+      - Merci pour votre aide
+      - C'est tout pour moi
+      - J'ai fini
+      - Merci, c'est tout
+      - Fin de la discussion

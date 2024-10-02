@@ -1,0 +1,15 @@
+assistant_id: 20240930-164712-scared-vase
+
+version: "3.0"
+
+language: "en"
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: CountVectorsFeaturizer
+  - name: DIETClassifier
+
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+  - name: TEDPolicy

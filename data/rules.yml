@@ -1,0 +1,56 @@
+version: "3.0"
+
+rules:
+  - rule: Présenter le menu quand l'utilisateur demande le menu
+    steps:
+      - intent: afficher_menu
+      - action: action_present_menu
+      - slot_was_set:
+          - vegetarian: null  # explicitly clear the vegetarian slot if not applicable
+
+  - rule: Présenter le menu végétarien
+    steps:
+      - intent: afficher_menu_vegetarien
+      - action: action_present_menu
+      - slot_was_set:
+          - vegetarian: true
+
+  - rule: Choisir un plat avec taille et prix
+    steps:
+      - intent: choisir_plat
+      - action: action_choose_item
+
+  - rule: Choisir une boisson avec taille et prix
+    steps:
+      - intent: choisir_boisson
+      - action: action_choose_item
+
+  - rule: greet the user
+    steps:
+      - intent: saluer
+      - action: utter_greet
+
+  - rule: present restaurant information
+    steps:
+      - intent: presentation_restaurant
+      - action: utter_present_restaurant
+
+  - rule: present dishes
+    steps:
+      - intent: presentation_plats
+      - action: utter_present_dishes
+
+  - rule: present drinks
+    steps:
+      - intent: presentation_boissons
+      - action: utter_present_drinks
+
+  - rule: say goodbye
+    steps:
+      - intent: au_revoir
+      - action: utter_goodbye
+
+  - rule: end conversation
+    steps:
+      - intent: fin_discussion
+      - action: utter_end_conversation

@@ -1,0 +1,47 @@
+version: "3.0"
+
+stories:
+  - story: utilisateur choisit un plat avec taille et prix
+    steps:
+      - intent: choisir_plat
+      - action: action_choose_item
+
+  - story: utilisateur choisit une boisson avec taille et prix
+    steps:
+      - intent: choisir_boisson
+      - action: action_choose_item
+
+  - story: utilisateur choisit un dessert avec taille et prix
+    steps:
+      - intent: choisir_dessert
+      - action: action_choose_item
+
+  - story: user greets
+    steps:
+      - intent: saluer
+      - action: utter_greet
+
+  - story: user asks about restaurant
+    steps:
+      - intent: presentation_restaurant
+      - action: utter_present_restaurant
+
+  - story: user asks about dishes
+    steps:
+      - intent: presentation_plats
+      - action: utter_present_dishes
+
+  - story: user asks about drinks
+    steps:
+      - intent: presentation_boissons
+      - action: utter_present_drinks
+
+  - story: user says goodbye
+    steps:
+      - intent: au_revoir
+      - action: utter_goodbye
+
+  - story: end of conversation
+    steps:
+      - intent: fin_discussion
+      - action: utter_end_conversation
